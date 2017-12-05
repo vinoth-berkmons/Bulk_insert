@@ -1,0 +1,283 @@
+<div ng-controller="bulkInsertCtrl">
+    <div class="container-fluid">
+        <div ng-show="showBulkInsert">
+            <div class="row">
+                <div class=' col-xs-12 col-sm-offset-2 col-sm-8'>
+                    <div class="col-sm-12 bulk-order-container">
+                        <div class="form_main">
+                            <h4 class="heading"><strong>Bulk </strong> Insert <span></span></h4>
+                            <div class="form">
+                                <form  name="bulkinsert">
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Invoice number</label>
+                                            <input type="number" required placeholder="Invoice number"
+                                                   ng-model="bulkInsert.invoiceNumber"
+                                                   name="invoicenumber" class="txt form-control">
+                                    <span class="required-field animated fadeInDown"
+                                          ng-show="bulkinsert.invoicenumber.$error.required && bulkinsert.invoicenumber.$touched">Invoice number is required.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Invoice date</label>
+                                            <input type="date" required placeholder="Invoice date"
+                                                   ng-model="bulkInsert.invoiceDate"  id="invoiceDate"
+                                                   name="invoicedate" class="txt form-control">
+                                    <span class="required-field animated fadeInDown"
+                                          ng-show="bulkinsert.invoicedate.$error.required && bulkinsert.invoicedate.$touched">Invoice date is required.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Invoice amount</label>
+                                            <input type="number" placeholder="Invoice amount" ng-model="bulkInsert.invoiceAmount"
+                                                   name="invoiceamount" class="txt form-control" required>
+                                            <span class="required-field animated fadeInDown" ng-show="bulkinsert.invoiceamount.$error.required && bulkinsert.invoiceamount.$touched">Invoice amount is required.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Invoice due date</label>
+                                            <input type="date" required placeholder="Invoice due date"
+                                                   ng-model="bulkInsert.invoiceDueDate"
+                                                   name="invoiceduedate" class="txt form-control">
+                                            <span class="required-field animated fadeInDown" ng-show="bulkinsert.invoiceduedate.$error.required && bulkinsert.invoiceduedate.$touched">Invoice due date is required.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Customer Number</label>
+                                            <input type="number" required placeholder="Customer Number"
+                                                   ng-model="bulkInsert.customerNumber"
+                                                   name="cutomernumber" class="txt form-control">
+                                            <span class="required-field animated fadeInDown" ng-show="bulkinsert.cutomernumber.$error.required && bulkinsert.cutomernumber.$touched">Customer number is required.</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <label>Choose country</label>
+                                            <select id="country2"   class="form-control country"
+                                                    name ="countryselect" ng-model="bulkInsert.country" required>
+                                                <option></option>
+                                            </select>
+
+                                            <span class="required-field animated fadeInDown"
+                                                  ng-show="bulkinsert.countryselect.$error.required && bulkinsert.countryselect.$touched">
+                                                Country is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+
+                                        <div class="form-group frm-cont">
+                                            <label>Invoice line items:</label> <input type="checkbox" value="{{item.id}}"
+                                                                                      name="checkLineItem" ng-change="checkItem(item.selected)"
+                                                                                      ng-model="item.selected"><br>
+                                           <div ng-if="showLineItem">
+                                               <small>Item name</small>
+                                               <input type="text" required placeholder="Item name"
+                                                      ng-model="bulkInsert.itemName"
+                                                      name="itemname" class="txt form-control">
+                                            <span class="required-field animated fadeInDown"
+                                                  ng-show="bulkinsert.itemname.$error.required && bulkinsert.itemname.$touched">
+                                                Item name is required.</span>
+                                               <br>
+                                               <small>Item cost</small>
+
+                                               <input type="number" required placeholder="Item cost"
+                                                      ng-model="bulkInsert.itemNumber"
+                                                      name="itemnumber" class="txt form-control">
+                                             <span class="required-field animated fadeInDown"
+                                                   ng-show="bulkinsert.itemnumber.$error.required && bulkinsert.itemnumber.$touched">
+                                                Item is required.</span>
+                                           </div>
+                                            <br>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group frm-cont">
+                                            <button ng-click="SaveBulkOrder(bulkInsert)" type="button"
+                                                    ng-disabled="bulkinsert.$pristine || bulkinsert.$invalid"
+                                                    class="btn btn-success btn-outline-rounded btn-info"> Submit
+                                                <span style="margin-left:10px;" class="fa fa fa-check fa-lg"></span></button>
+
+                                            <button ng-click="approveGivenData()" type="button"
+                                                    class="btn btn-success btn-outline-rounded btn-info"> Click to approve
+                                                <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="showApprovalItems">
+            <div class="row">
+                <!-- nav -->
+
+                <!-- Content-->
+                <div class="col-sm-12 ">
+                    <div class="approval-container mt-100">
+                        <div class="col-sm-12 mb-10 filter-container">
+                            <div  class="col-sm-3">Search: <input placeholder="type anything..." class="form-control" ng-model="search" type="text"> </div>
+                            <div class="col-sm-9">
+                                <div class=" col-sm-4">
+                                    <div class="col-sm-12"><label class="float-left pr-35">Search by Date   </label> <input ng-change="checkDate(date.selected)" value="date.id" name="myDate" type="checkbox" ng-model="myDate"></div>
+                                    <div class="col-sm-12"><label class="pr-10"> Search by  Amount  </label>  <input ng-change="checkAmount(amount.selected)" value="amount.id" name="myPrice" type="checkbox" ng-model="myPrice"></div>
+                                </div>
+
+                                <div class="col-sm-4">  <input class="form-control" placeholder="from date or amount" type="text" ng-model="from"> <small class="small-txt">DD/MM/YYYY</small> </div>
+                                <div class="col-sm-4">  <input class="form-control" placeholder="to date or amount" ng-model="to" type="text"> <small class="small-txt">DD/MM/YYYY</small> </div>
+
+                            </div>
+                        </div>
+                            <table
+                                    class="table bg-white table-striped table-bordered table-hover ">
+                                <thead>
+                                <tr class="header-sort">
+                                    <th > Invoice number </th>
+                                    <th >Invoice date </th>
+                                    <th > Invoice amount</th>
+                                    <th> invoice due date</th>
+                                    <th>Customer number </th>
+                                    <th > Customer country  </th>
+                                    <th > Item name </th>
+                                    <th > Item cost</th>
+                                    <td>  </td>
+                                    <td> <button class="btn btn-danger btn-sm" ng-click="deleteAll()">Delete all</button> </td>
+                                    <td> <button class="btn btn-success btn-sm" ng-click="approveAll()">Approve all</button> </td>
+                                    <td> <button class="btn btn-warning btn-sm" ng-click="rejectAll()">Reject all</button> </td>
+
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr ng-repeat="client in addedItems | orderBy:invoiceNumber | filter:search |  range: from : to : myDate == true ? 'myDate': myPrice == true ? 'myPrice' : ''">
+                                    <td>{{client.invoiceNumber}} </td>
+                                    <td> {{ returnDate(client.invoiceDate) }} </td>
+                                    <td> {{client.invoiceAmount}} </td>
+                                    <td> {{ returnDate(client.invoiceDueDate) }} </td>
+                                    <td> {{client.customerNumber}} </td>
+                                    <td> {{client.country }} </td>
+                                    <td> {{client.itemName}} </td>
+                                    <td> {{client.itemNumber}} </td>
+                                    <td> <button class="btn btn-primary btn-xs" type="button" data-toggle="modal" ng-click="invoiceEdit(client)"
+                                                 data-target="#calForEdit"
+                                                >Edit</button> </td>
+                                    <td> <button class="btn btn-danger btn-xs" ng-click="delete(client)">delete</button> </td>
+                                    <td> <button class="btn btn-success btn-xs" ng-disabled="client.approve==true && client.reject==false"   ng-click="approve(client, true)">Approve</button> </td>
+                                    <td> <button class="btn btn-warning btn-xs" ng-disabled="client.approve==false && client.reject==true"  ng-click="reject(client, true)">Reject</button> </td>
+
+                                    <div id="calForEdit" class="modal fade max-goal-selection" data-toggle="modal" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                            data-dismiss="modal">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        <span class="sr-only">Close</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        Edit Item
+                                                    </h4>
+                                                </div>
+
+                                                <!-- Modal Body -->
+                                                <div class="modal-body">
+
+                                                    <form role="form">
+                                                        <div class="form-group">
+                                                            <label >Invoice Number</label>
+                                                            <input disabled type="text" ng-model="invoice.invoiceNumber" class="form-control"
+                                                                   placeholder="Invoice Number"/>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label > Invoice date </label>
+                                                            <input type="date" id="approvalInvoice" ng-model="invoice.invoiceDate" class="form-control"
+                                                                   placeholder="Invoice date"/>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label > Invoice amount </label>
+                                                            <input type="text" class="form-control" ng-model="invoice.invoiceAmount"
+                                                                   placeholder="Invoice amount"/>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label > Invoice due date </label>
+                                                            <input type="date" class="form-control" ng-model="invoice.invoiceDueDate"
+                                                                   placeholder="Invoice due date"/>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label > Customer number </label>
+                                                            <input type="text" class="form-control" ng-model="invoice.customerNumber"
+                                                                   placeholder="Customer number "/>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label > Customer country </label>
+                                                            <select id="country3"   class="form-control country"
+                                                                    name ="countryselect" ng-model="invoice.country" required>
+                                                                <option></option>
+                                                            </select>
+                                                            <!--<input type="text" class="form-control" ng-model="invoice.country"-->
+                                                                   <!--placeholder="Customer country"/>-->
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Invoice line items:</label><br>
+                                                            <small>Item name</small>
+                                                            <input type="text" required placeholder="Item name"
+                                                                   ng-model="invoice.itemName"
+                                                                   name="itemname" class="txt form-control">
+                                                            <small>Item cost</small>
+                                                            <input type="text" required placeholder="Item cost"
+                                                                   ng-model="invoice.itemNumber"
+                                                                   name="itemnumber" class="txt form-control">
+                                                        </div>
+
+                                                    </form>
+
+
+                                                </div>
+
+                                                <!-- Modal Footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                            data-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button  ng-click="editItem(invoice)" type="button" class="btn btn-primary">
+                                                        Save changes
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </tr>
+                                </tbody>
+
+                            </table>
+                    </div>
+                </div>
+            </div>
+                <button  ng-click="backToAddInvoice()" type="button" class="btn btn-primary">
+                    Back
+                </button>
+        </div>
+    </div>
+</div>

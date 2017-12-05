@@ -1,0 +1,127 @@
+/*
+Fonts
+  Radikal
+  Gotham Rounded
+*/
+
+/*Radikal*/
+@font-face{
+    font-family: 'radikalRegular';
+    src: url('../fonts/Radikal/nootype_-_radikal_0-webfont.eot');
+    src: url('../fonts/Radikal/nootype_-_radikal_0-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Radikal/nootype_-_radikal_0-webfont.woff2') format('woff2'),
+    url('../fonts/Radikal/nootype_-_radikal_0-webfont.woff') format('woff'),
+    url('../fonts/Radikal/nootype_-_radikal_0-webfont.ttf') format('truetype'),
+    url('../fonts/Radikal/nootype_-_radikal_0-webfont.svg#radikal regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'radikalBold';
+    src: url('../fonts/Radikal/nootype_-_radikal_bold-webfont.eot');
+    src: url('../fonts/Radikal/nootype_-_radikal_bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Radikal/nootype_-_radikal_bold-webfont.woff2') format('woff2'),
+    url('../fonts/Radikal/nootype_-_radikal_bold-webfont.woff') format('woff'),
+    url('../fonts/Radikal/nootype_-_radikal_bold-webfont.ttf') format('truetype'),
+    url('../fonts/Radikal/nootype_-_radikal_bold-webfont.svg#radikal bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'radikalLight';
+    src: url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.eot');
+    src: url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.woff2') format('woff2'),
+    url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.woff') format('woff'),
+    url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.ttf') format('truetype'),
+    url('../fonts/Radikal/nootype_-_radikal_light_0-webfont.svg#radikal light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'radikalMedium';
+    src: url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.eot');
+    src: url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.woff2') format('woff2'),
+    url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.woff') format('woff'),
+    url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.ttf') format('truetype'),
+    url('../fonts/Radikal/nootype_-_radikal_medium_0-webfont.svg#radikal medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'radikalThin';
+    src: url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.eot');
+    src: url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.woff2') format('woff2'),
+    url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.woff') format('woff'),
+    url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.ttf') format('truetype'),
+    url('../fonts/Radikal/nootype_-_radikal_thin_0-webfont.svg#radikal thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Gotham Rounded*/
+@font-face {
+    font-family: 'GothamRoundedBold';
+    src: url('../fonts/GothamRounded/GothamRounded-Bold.otf'),
+    url('../fonts/GothamRounded/GothamRounded-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedBoldItalic';
+    src: url('../fonts/GothamRounded/GothamRounded-BoldItalic.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedBook';
+    src: url('../fonts/GothamRounded/GothamRounded-Book.otf'),
+    url('../fonts/GothamRounded/GothamRounded-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedBookItalic';
+    src: url('../fonts/GothamRounded/GothamRounded-BookItalic.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedLight';
+    src: url('../fonts/GothamRounded/GothamRounded-Light.otf'),
+    url('../fonts/GothamRounded/GothamRounded-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedLightItalic';
+    src: url('../fonts/GothamRounded/GothamRounded-LightItalic.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedMedium';
+    src: url('../fonts/GothamRounded/GothamRounded-Medium.otf'),
+    url('../fonts/GothamRounded/GothamRounded-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamRoundedMediumItalic';
+    src: url('../fonts/GothamRounded/GothamRounded-MediumItalic.otf');
+    font-weight: normal;
+    font-style: normal;
+}
